@@ -1,0 +1,38 @@
+.button-fab {
+    border-radius: 50%;
+    height: 4em;
+    width: 4em;
+    background-color: #9ab63d;
+    z-index: 9999;
+    box-shadow: 5px 5px 5px grey;
+}
+
+.show-bottom {
+    position: fixed;
+    bottom: 28px;
+    right: 135px;
+}
+
+.glyphicon-user {
+    color: white;
+    font-size: 150%;
+}
+
+.mTop5px{
+    margin-top: 5px;
+}
+
+.fRight{
+    float:right;
+}
+
+.fNone{
+    float:none;
+}
+
+@media (min-width: 200px) and (max-width: 1024px){
+	.col-sm-10, .form-control {
+		width: 100% !important;
+        float:none !important;
+	}
+}

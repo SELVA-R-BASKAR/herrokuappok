@@ -1,0 +1,88 @@
+<button [class]="fabClass" (click)="onChatButtonClick($event)">
+  <i [class]="iconClass"></i>
+</button>
+<div class="row">
+  <div class="col-md-5 show-bottom col-sm-12 col-xs-12 col-lg-5" >
+      <ng-container *ngIf="showChat">
+          <div class="request" style="z-index: 999999; display: block; margin-top:20%">
+              <div style=" float: left;padding: 3px 10px 0 10px ;"> Onboarding Channel</div>
+            </div>
+        </ng-container>
+    <div [hidden]="!chatClicked" class="col-md-8 col-sm-6 col-xs-12 col-lg-8" style="position:fixed; bottom:102px; right:10px; height:75%; border: 0px solid #cfcfcf; padding-bottom:14px">
+        <div class="modal-content" style="height: 596px; top:-20px">
+            <!-- <div class="modal-header" style="height: 55px;"> -->
+      <!-- DropDownList
+        <div *ngIf="showChat">
+        <div class="dropdown" style="padding-bottom: 10px;">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select an option
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><button style = "width:187px" value="loan status" class="btn btn-success" (click) ="menuOptions('loan status')">Loan Status</button></li>
+            <li><button style = "width:187px" value = "loan appraisal"class="btn btn-success" (click) ="menuOptions('loan appraisal')">Loan Appraisal</button></li>
+            <li><button value = "pending documents" class="btn btn-success" (click) ="menuOptions('pending documents')">Pending Loan Documents</button></li>
+          </ul>
+        </div> -->
+      <!-- </div> -->
+      <!--BBCode buttons handle below-->
+      <!-- <div *ngIf="showChat">
+        <div class="btn-group">
+          <button  class="btn btn-default pull-left" (click)="openAuthenticateModal()">Authenticate</button>
+        <button  class="btn btn-default pull-left"  (click)="openLoanModal()">Loan Status</button>
+        </div>
+      </div> -->
+      <!-- <div class="panel-body" style="max-height: 100%;  padding-top:0px;" [ngClass]='{fullscreen: showChat}'> -->
+        <!-- [hidden]="showchat" // hiding the form-->
+        <div [hidden]="true">
+          <div>
+            <span class="text-center">
+              <img src="assets/images/bank-digital.png" class="center-block" height="100px">
+            </span>
+          </div>
+          <div class="text-ids">Mortgage specialists typically reply within a few hours</div>
+          <div class="form">
+            <input type="text" class="form-control form-control1 margin-bottom-10" [(ngModel)]="firstName" (change)="validate('fname',$event.target.value)"
+              (blur)="validate('fname',$event.target.value)" placeholder="First Name" autofocus required/>
+            <label class="text-danger" *ngIf="flag.fname">Invalid First name!</label>
+            <input type="text" class="form-control form-control1 margin-bottom-10" [(ngModel)]="lastName" (change)="validate('lname',$event.target.value)"
+              (blur)="validate('lname',$event.target.value)" placeholder="Last Name" required/>
+            <label class="text-danger" *ngIf="flag.lname">Invalid Last name!</label>
+            <select class="form-control form-control1" [(ngModel)]="countryCode" style="width: 20%; float: left;  margin-right: 3%;">
+              <option value="+1">+1&nbsp;&nbsp; USA</option>
+              <option value="+91">+91 IND</option>
+              <option value="+65">+65 SIN</option>
+            </select>
+            <input type="text" class="form-control form-control1 margin-bottom-10" [(ngModel)]="phone" (change)="validate('phone',$event.target.value)"
+              (blur)="validate('phone',$event.target.value)" placeholder="Enter Phone Number" style="width: 67%; float: left;"
+              required>
+            <label class="text-danger" *ngIf="flag.phone">Invalid phone number!</label>
+            <input type="email" class="form-control form-control1 margin-bottom-10" [(ngModel)]="email" (change)="validate('email',$event.target.value)"
+              (blur)="validate('email',$event.target.value)" placeholder="Email Id" />
+            <label class="text-danger" *ngIf="flag.email">Invalid email!</label>
+            <input type="text" class="form-control form-control1 margin-bottom-10" [(ngModel)]="ssnNum" placeholder="Enter SSN Number"
+            />
+            <input type="text" class="form-control form-control1 margin-bottom-10" [(ngModel)]="zip" placeholder="Zip Code" />
+            <button type="submit" class="btn btn-primary btn-block" style="background-color:#00727e !important" (click)="connect()">Connect With Us</button>
+          </div>
+        </div>
+        <div class="modal-body" style="height: 633px; padding:18px; bottom:-9px;">
+        <div id="chatViewPort" style="margin-top:-20px">
+        </div>
+      </div>
+        </div>
+      <!-- </div> -->
+    </div>
+  </div>
+</div>
+
+<ng-template #templateAlertModal>
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Agent is trying to call you.</h4>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-success pull-right" (click)="callInResponse('accept')">Accept</button>
+      <button class="btn btn-default pull-right" (click)="callInResponse('reject')">Reject</button>
+    </div>
+  </div>
+</ng-template>

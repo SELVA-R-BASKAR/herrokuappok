@@ -1,0 +1,35 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" (click)='bsModalRef.hide();'>&times;</button>
+    <h4 class="modal-title">Select Users</h4>
+  </div>
+  <br>
+  <form #f="ngForm">
+    <div class="modal-body" class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="btn-group">
+            <button type="button" id="contacts" class="btn btn-info dropdown-toggle" data-toggle="dropdown" (click)="onDropDownClicked()">
+              Contacts
+            </button>
+            <ul class="dropdown-menu scrollable-menu" role="menu">
+              <li>
+                <div class="list-group-item-text" class="checkbox" *ngFor="let contact of dropDownContacts" let i=index>
+                  <label id="font">
+                    <input type="checkbox" name="first_name" id="first_name" ngModel [value]="first_name" (change)="changeModel($event,contact,contact.i)"
+                      required> {{ contact.first_name }}
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="onBackClicked()">BACK</button>
+      <button type="button" class="btn btn-primary" (click)="onAddClicked()">ADD</button>
+    </div>
+  </form>
+</div>

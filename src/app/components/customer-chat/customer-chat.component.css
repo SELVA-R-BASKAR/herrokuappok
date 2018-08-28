@@ -1,0 +1,165 @@
+.button-fab-primary {
+    border-radius: 50%;
+    height: 4em;
+    width: 4em;
+    background-color: #3c763d;
+    z-index: 9999;
+    box-shadow: 5px 5px 5px grey;
+}
+
+.button-fab-danger{
+    border-radius: 50%;
+    height: 4em;
+    width: 4em;
+    background-color: red;
+    z-index: 9999;
+    box-shadow: 5px 5px 5px grey;
+}
+
+.show-bottom {
+    position: fixed;
+    bottom: 28px;
+    right: 10px;
+}
+
+.glyphicon-comment, .glyphicon-remove{
+    color: white;
+    font-size: 150%;
+}
+
+.text-IDs {
+        text-align: center;      
+       /* border-top: 1px solid #1b88ef;*/
+        font-size: 12px;
+        padding: 5px 0;
+        color: #02828f;  
+  }
+
+  .input-group .form-control1{
+	width: 100%;
+	padding: 13px 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+	border: 1px solid #f5f5f5 !important;-webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out !important;
+  -ms-transition: all 0.30s ease-in-out !important;
+  -o-transition: all 0.30s ease-in-out !important;
+  outline: none !important;
+  color: #000;
+  font-family: 'Graphik';
+  font-size: 13px;
+  background: #fff;
+}
+
+.moxie  { 
+    text-align: center;
+    float: none;
+    width: 250px auto;
+    margin: 0px auto;
+   }
+.moxie img {
+    /* border-radius: 100%;*/
+     margin:37px 0 0 -38px;
+     max-width: none;
+   }
+.margin-bottom-10 {
+    margin-bottom: 10px;
+}
+
+#chatViewPort{
+    height: 100%;
+    width: 100%;
+}
+
+.fullscreen{
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+}
+
+.request {
+
+    position: fixed;   
+    margin-left:-65px;
+    background: #02828f;
+    color: #fff;
+    border-radius: 34px;
+    font-size: 15px;
+    font-family: 'Graphik';
+    text-align: center;
+    border: 1px solid #efefef;
+    white-space: nowrap;
+    position: absolute;
+    top: 90px;
+    transform: rotate(270deg);
+    z-index: 999999; 
+    display: block;
+    margin-top: 40%;
+}
+
+.panel {
+    position:fixed; 
+    bottom:120px; 
+    right:10px; 
+    height:75%; 
+    width:50%;
+}
+
+.panel-body {
+    max-height: 100%;
+    padding-top: 0px; 
+    overflow-y: scroll;
+}
+
+.onboarding channel {
+    float: left;
+    padding: 3px 10px 0 10px ;
+}
+
+.center-block {
+    height: 100px;
+}
+
+.btn .btn-primary .btn-block {
+    background-color: #00727e;
+}
+
+.text-ids{
+    padding: 5px 0; 
+    color: #02828f !important;
+}
+
+#chatViewPort :first-child{
+    margin: 0px !important;
+}
+
+/* @media only screen and (min-width: 600px) {
+    /* For tablets:
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: 
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+} */

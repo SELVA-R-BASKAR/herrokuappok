@@ -1,0 +1,72 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" (click)="bsModalRef.hide()">&times;</button>
+        <h4 class="modal-title">Borrower Authentication</h4>
+    </div>
+    <div class="modal-body">
+        <div *ngIf="!progressBar;else ProgressBarTemplate">
+            <form class="authentication-form" role="form">
+                <div class="form-group">
+                    <label class="control-label" for="loanId">LoanID</label>
+                    <div class="col-sm-10">
+
+                        <input type="text" class="form-control" name="loanId" [(ngModel)]="loanId" placeholder="Enter Loan ID" (change)="validate('loanId',$event.target.value)"
+                            autofocus required/>
+                        <label class="text-danger" *ngIf="flag.loanId">Invalid loanId</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="ssn">SSN</label>
+                    <div class="col-sm-10">
+
+                        <input type="text" class="form-control" name="ssn" [(ngModel)]="ssn" placeholder="Enter ssn" (change)="validate('ssn',$event.target.value)"
+                            autofocus required/>
+                        <label class="text-danger" *ngIf="flag.ssn">Invalid SSN</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="firstname">First Name</label>
+                    <div class="col-sm-10">
+
+                        <input type="text" class="form-control" name="firstname" [(ngModel)]="firstName" placeholder="Enter First Name" (change)="validate('firstname',$event.target.value)"
+                            autofocus required/>
+                        <label class="text-danger" *ngIf="flag.firstName">Invalid First name</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="lastname">Last Name</label>
+                    <div class="col-sm-10">
+
+                        <input type="text" class="form-control" name="lastname" [(ngModel)]="lastName" placeholder="Enter Last Name" (change)="validate('lastname',$event.target.value)"
+                            autofocus required/>
+                        <label class="text-danger" *ngIf="flag.lastName">Invalid Last Name</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="email">Email</label>
+                    <div class="col-sm-10">
+
+                        <input type="text" class="form-control" name="email" [(ngModel)]="email" placeholder="Enter email" (change)="validate('email',email)"
+                            autofocus required/>
+                        <label class="text-danger" *ngIf="flag.email">Invalid email</label>
+                    </div>
+                </div>
+            </form>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success" (click)="invokeMessage()" data-dismiss="modal">Submit</button>
+                <button type="button" class="btn btn-danger" (click)="bsModalRef.hide()" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <ng-template #ProgressBarTemplate>
+            <div *ngIf="!moxtraError; else errorTemplate">
+                <progressbar [value]="dynamic" type="danger" [striped]="true" [animate]="true">
+                    <b>{{dynamic}}%</b>
+                </progressbar>
+            </div>
+            <ng-template #errorTemplate>
+                <p>Error in Moxtra Gateway, please change network</p>
+            </ng-template>
+        </ng-template>
+    </div>
+
+</div>

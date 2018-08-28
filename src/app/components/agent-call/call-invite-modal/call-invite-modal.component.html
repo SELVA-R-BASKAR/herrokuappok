@@ -1,0 +1,38 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" (click)='bsModalRef.hide();'>&times;</button>
+    <h4 class="modal-title">Invite Users</h4>
+  </div>
+
+  <div class="modal-body">
+    <form>
+      <div class="inputWithIcon inputIconBg">
+        <div id="invite-container">
+          <div class="row">
+            <div *ngIf="inviteContacts[0]; else elseBlock">
+              
+              <div style="border: 1px solid #cfcfcf; border-radius: 5px;">
+                <i class="fa fa-address-book fa-lg fa-fw" style="position: inherit;" aria-hidden="true" (click)="onContactClicked()"></i>
+              <span> </span>
+              <div class="col-xs-12" class="input-group">
+                <button type="button" id="rcorners2" *ngFor="let fnames of displayContacts">{{ fnames }}</button>
+              </div>
+            </div>
+        
+            </div>
+          </div>
+          <ng-template #elseBlock>
+            <div class="inputWith    //this.select = !this.select;
+            Icon inputIconBg"></div>
+            <input type="text" placeholder="Search Users">
+        <i class="fa fa-address-book fa-lg fa-fw" aria-hidden="true" (click)="onContactClicked()"> </i>
+        </ng-template>
+      </div>
+  </div>
+  </form>
+</div>
+
+<div class="modal-footer">
+  <button type="button" [disabled]="!inviteContacts[0]" class="btn btn-success" (click)="bsModalRef.hide(); onInviteClicked();" >Invite</button>
+</div>
+</div>

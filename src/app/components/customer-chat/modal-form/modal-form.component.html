@@ -1,0 +1,39 @@
+<div class="modal-content">
+
+  <div class="modal-header">
+    <h4 class="modal-title">Loan status</h4>
+    <button type="button" class="close" data-dismiss="modal" (click)="bsModalRef.hide()">&times;</button>
+  </div>
+
+  <div class="modal-body">
+    <div *ngIf="!progressBar;else ProgressBarTemplate">
+      <form class="form">
+        <div class="form-group">
+          <label class="control-label" for="loanId">LoanID</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="loanID" [(ngModel)]="clientLoanNumber" placeholder="Client Loan Number" (change)="validate('loanId',clientLoanNumber)"
+              (blur)="validate('loanId',clientLoanNumber)" autofocus required/>
+          </div>
+        </div>
+      </form>
+      <br>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-success" (click)="invokeMessage();" data-dismiss="modal">Submit</button>
+        <button type="button" class="btn btn-danger" (click)="bsModalRef.hide()" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+    <ng-template #ProgressBarTemplate>
+     <div *ngIf="!moxtraError; else errorTemplate">
+      <progressbar [value]="dynamic" type="danger" [striped]="true" [animate]="true">
+        <b>{{dynamic}}%</b>
+    </progressbar>
+     </div>   
+     <ng-template #errorTemplate>
+      <p>Error in Moxtra Gateway, please change network</p>
+      </ng-template> 
+</ng-template>
+  
+  </div>
+
+</div>

@@ -1,0 +1,19 @@
+.button-fab {
+    border-radius: 50%;
+    height: 4em;
+    width: 4em;
+    background-color: #3c763d;
+    z-index: 9999;
+    box-shadow: 5px 5px 5px grey;
+}
+
+.show-bottom {
+    position: fixed;
+    bottom: 28px;
+    right: 72px;
+}
+
+.glyphicon-earphone {
+    color: white;
+    font-size: 150%;
+}
